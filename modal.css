@@ -594,7 +594,7 @@ footer {
   .topnav.responsive a {
     float: none;
     display: block;
-    text-align: left;
+    text-align: right;
   }
 
   .header-logo img {
@@ -608,6 +608,15 @@ footer {
     margin-right: 50px;
   }
 
+  .hero-text {
+    width: unset;
+    font-size: 0.9rem;
+    margin-top: 20px;
+  }
+
+  .hero-img img {
+    margin-top: 20px;
+  }
 }
 
 
