@@ -17,8 +17,8 @@
         <img alt="logo" src="Logo.png"/> <!-- Suppression de wight et height dans l'HTML -->
       </div>
       <div class="main-navbar">
-        <a href="#" class="active"><span>Accueil</span></a>
-        <a href="#"><span>Détails de l'évènement</span></a>
+        <!--Suppression du bt Acceuil-->
+        <a href="#" class="active"><span>Détails de l'évènement</span></a> <!--Attribution de la class active-->
         <a href="#"><span>À propos</span></a>
         <a href="#"><span>Contact</span></a>
         <a href="#"><span>Évènements passés</span></a>
@@ -57,7 +57,9 @@
               method="get"
               onsubmit="return validate(event);"
               novalidate 
-            > <!--attribut "novalidate" pour désactiver la validation automatique par le navigateur-->
+              id="registrationForm"
+            > <!--attribut "novalidate" pour désactiver la validation automatique par le navigateur
+            Ajout de l'id registrationForm-->
               <div
                 class="formData">
                 <label for="first">Prénom</label><br> <!--Ajout de for-->
@@ -69,7 +71,7 @@
                   minlength="2"
                   required="required"
                 /><br> <!--Ajout du prénom obligatoire-->
-                <div id="firstError"></div> <!--Ajout du message d'erreur-->
+                <div class="result" id="firstError"></div> <!--Ajout du message d'erreur-->
               </div>
               <div
                 class="formData">
@@ -111,14 +113,14 @@
               <div
                 class="formData">
                 <label for="quantity">À combien de tournois GameOn avez-vous déjà participé ?</label><br> <!--Ajout for-->
-                <input type="text" class="text-control" id="quantity" name="quantity" onkeyup="return checkNb()" required /> <!--Ajout de required et / et pattern-->
+                <input type="text" class="text-control" id="quantity" name="quantity" min="0" max="99" required /> <!--Ajout de required et / et pattern-->
                 <div class="result" id="quantityError"></div> <!--Ajout du message d'erreur-->
               </div>
               <p class="text-label">A quel tournoi souhaitez-vous participer cette année ?</p>
               <div
                 class="formData">
                 <input
-                  class="checkbox-input"
+                  class="checkbox-input" 
                   type="radio"
                   id="location1"
                   name="location"
@@ -183,6 +185,7 @@
                   <span class="checkbox-icon"></span>
                   Portland</label
                 >
+                <div class="result" id="locationError"></div> <!--Ajout du message d'erreur-->
               </div>
 
               <div
@@ -194,11 +197,12 @@
                   name="checkbox1"
                   checked
                   required
-                /> <!--Ajout de name et required-->
+                /> <!--Ajout de "name" et required-->
                 <label class="checkbox2-label" for="checkbox1"> <!--Suppression de required-->
                   <span class="checkbox-icon"></span>
                   J'ai lu et accepté les conditions d'utilisation.
                 </label>
+                <div class="result" id="cgvError"></div> <!--Ajout du message d'erreur-->
                 <br>
                 <input class="checkbox-input" type="checkbox" id="checkbox2" name="checkbox2"/> <!--Ajout de name-->
                 <label class="checkbox2-label" for="checkbox2">
@@ -213,6 +217,17 @@
                 value="C'est parti"
               /> <!-- Il y avait 2 class séparées-->
             </form>
+          </div>
+          <div class="message-validation">
+            <div id="text-message-validation">
+              <p>Merci pour </br> votre inscription</p>
+            </div>
+            <input
+            id="submitClose"
+            class="btn-submit btn-submit-close button"
+            type="submit"
+            value="Fermer"
+            />
           </div>
         </div>
       </div>
