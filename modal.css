@@ -16,7 +16,7 @@ body {
   margin: 0;
   display: flex;
   flex-direction: column;
-  background-image: url("background.png");
+  /*Suppression de l'image background*/
   font-family: var(--font-default);
   font-size: 18px;
   max-width: 1300px;
@@ -560,7 +560,7 @@ footer {
 
   .hero-section>.btn-signup {
     display: block;
-    margin: 32px auto 10px;
+    margin: 50px auto 10px;
     padding: 12px 35px;
   }
 
@@ -572,11 +572,11 @@ footer {
   .main-navbar {
     display: flex;
     width: 100%;
-    margin-top: 0px;
   }
 
   .menu-list {
     padding-right: 0px;
+    margin-top: 30px;
     display: flex;
     justify-content: space-around;
     width: 100%;
@@ -599,16 +599,23 @@ footer {
 
   .topnav {
     display: flex;
+    position: fixed;
+    z-index: 2;
+    width: 100%;
+    padding: 20px;
+    margin: 0px;
+    background-color: white;
+
   }
 
   .topnav.responsive {
-    position: relative;
+    position: fixed;
   }
 
   .topnav.responsive .icon {
     position: absolute;
-    right: 0;
-    top: 0;
+    right: 20px;
+    top: 20px;
   }
 
   .topnav.responsive a {
@@ -626,6 +633,12 @@ footer {
     flex-direction: column;
     align-items: end;
     margin-right: 50px;
+    margin-top: 0px;
+  }
+
+  main {
+    position: absolute;
+    top: 97px;
   }
 
   .hero-text {
@@ -639,7 +652,11 @@ footer {
   }
 
   .content {
-    margin: 80px auto auto auto;
+    margin: 90px auto 40px auto;
+  }
+
+  footer {
+    margin-top: 1120px;
   }
 }
 
@@ -656,6 +673,10 @@ footer {
 
   .hero-headline {
     font-size: 2.5rem;
+  }
+
+  footer {
+    margin-top: 830px;
   }
 }
 
