@@ -47,7 +47,9 @@
         <div class="hero-img">
           <img src="./bg_img.jpg" alt="img" />
         </div>
-        <!-- <button class="btn-signup modal-btn"> en trop -->
+        <button class="btn-signup modal-btn">
+          je m'inscris
+        </button>
       </div>
 
       <div class="bground">
@@ -115,7 +117,7 @@
               </div>
               <div
                 class="formData">
-                <label for="quantity">À combien de tournois GameOn avez-vous déjà participé ?</label><br> <!--Ajout for-->
+                <label for="quantity" id="quantity-label">À combien de tournois GameOn avez-vous déjà participé ?</label><br> <!--Ajout for-->
                 <input type="text" class="text-control" id="quantity" name="quantity" min="0" max="99" required /> <!--Ajout de required et / et pattern-->
                 <div class="result" id="quantityError"></div> <!--Ajout du message d'erreur-->
               </div>
@@ -192,7 +194,7 @@
               </div>
 
               <div
-                class="formData">
+                class="formData cgv">
                 <input
                   class="checkbox-input"
                   type="checkbox"

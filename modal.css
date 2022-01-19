@@ -193,6 +193,12 @@ input {
   height: 48px;
 }
 
+.cgv {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
 .formData[data-error]::after {
   content: attr(data-error);
   font-size: 0.4em;
@@ -212,6 +218,15 @@ input {
 
 .formData[data-error-visible="true"] .text-control {
   border: 2px solid #e54858;
+}
+
+#quantity-label {
+  margin-top: 11px;
+}
+
+.checkbox2-label {
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .checkbox-label,
@@ -408,7 +423,8 @@ input {
 }
 
 .hero-section {
-  min-height: 93vh;
+  min-height: 50vh;
+  /*valeur trop grande*/
   border-radius: 10px;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
@@ -565,6 +581,10 @@ footer {
     justify-content: space-around;
     width: 100%;
   }
+
+  .content {
+    margin: 150px auto 150px auto;
+  }
 }
 
 @media screen and (max-width: 768px) {
@@ -616,6 +636,10 @@ footer {
 
   .hero-img img {
     margin-top: 20px;
+  }
+
+  .content {
+    margin: 80px auto auto auto;
   }
 }
 
