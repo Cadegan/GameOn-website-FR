@@ -41,7 +41,7 @@ modalClose.addEventListener('click', close); //Ecoute event clic de souris sur l
 modalSubmitClose.addEventListener('click', close);
 
 //Appel de la fonction 'close' pour cacher le formulaire et réinitialiser les entrées
-function close () {
+function close() {
   modalbg.style.display = "none"; 
   document.querySelector('.modal-body').style.display = 'block';
   document.querySelector('.message-validation').style.display = 'none';
@@ -72,21 +72,21 @@ modalClose.addEventListener('click', function () {
 */
 
 //Controle d'entrée du prénom
-const prenomValidation = () => {
+function prenomValidation() {
   //Réinitialise les messages d'erreur
   firstError.innerHTML = ' ';
   firstError.classList.remove('errorStyle');
   first.classList.remove('errorForm');
-  // Chaque fois que l'utilisateur saisit quelque chose
-  // on vérifie la validité du champ prénom.
-//si rien n'est écrit
-  if (firstName.value.length == 0){
+  //Chaque fois que l'utilisateur saisit quelque chose
+  //On vérifie la validité du champ prénom
+  //Si rien n'est écrit ou s'il n'y a que des espaces
+  if (firstName.value.trim().length == 0){
     firstError.innerHTML = 'Réponse obligatoire!'; //ajout du message
     firstError.classList.add('errorStyle'); //ajout d'une class au message d'erreur
     first.classList.add('errorForm'); //ajout d'une class a la zone d'entrée
     return false;
-//s'il y a moins de 2 caracteres
-  } else if (firstName.value.length < 2) {
+//s'il y a moins de 2 caracteres ou que des espaces
+  } else if (firstName.value.trim().length < 2) {
     firstError.innerHTML = 'Veuillez entrer 2 caractères ou plus pour le champ du prénom.'; 
     firstError.classList.add('errorStyle');
     first.classList.add('errorForm');
@@ -99,21 +99,21 @@ const prenomValidation = () => {
 };
 
 //Controle d'entrée du nom
-const nomValidation = () => {
+function nomValidation() {
   //Réinitialise les messages d'erreur
   lastError.innerHTML = ' ';
   lastError.classList.remove('errorStyle')
   last.classList.remove('errorForm')
   // Chaque fois que l'utilisateur saisit quelque chose
   // on vérifie la validité du champ
-  //si rien n'est écrit
-  if (lastName.value.length == 0) {
+  //si rien n'est écrit ou s'il n'y a que des espaces
+  if (lastName.value.trim().length == 0) {
     lastError.innerHTML = 'Réponse obligatoire!'; //ajout du message
     lastError.classList.add('errorStyle') //ajout d'une class au message d'erreur
     last.classList.add('errorForm') //ajout d'une class a la zone d'entrée
     return false
-    //s'il y a moins de 2 caracteres
-  } else if (lastName.value.length < 2) {
+    //s'il y a moins de 2 caractères ou que des espaces
+  } else if (lastName.value.trim().length < 2) {
     lastError.innerHTML = 'Veuillez entrer 2 caractères ou plus pour le champ du nom.';
     lastError.classList.add('errorStyle')
     last.classList.add('errorForm')
@@ -127,7 +127,7 @@ const nomValidation = () => {
 
 //Controle email
 //Reinitialisation
-const mailValidation = () => {
+function mailValidation() {
   mailError.innerHTML = '';
   mailError.classList.remove('errorStyle');
   email.classList.remove('errorForm');
@@ -153,7 +153,7 @@ const mailValidation = () => {
 };
 
 //Controle age
-const birthdateValidation = () => {
+function birthdateValidation() {
   if (birthdateInput.value == ""){
     birthdateError.innerHTML = 'Vous devez entrer votre date de naissance.';
     birthdateError.classList.add('errorStyle')
@@ -175,7 +175,7 @@ const birthdateValidation = () => {
 };
 
 //Control nombre de tournois
-const checkNb = () => { 
+function checkNb() { 
   var nbTournois = document.getElementById("quantity").value;
   //Si ce n'est pas un chiffre
   if (isNaN(nbTournois)) {
@@ -193,8 +193,8 @@ const checkNb = () => {
 }
 
 //Selection d'une ville
-const locationValidation = () => {
-//instialise la variable
+function locationValidation() {
+//initialise les variables
 var valid = false;
 var x = document.reserve.location;
 
@@ -202,10 +202,11 @@ var x = document.reserve.location;
 for(var i=0; i<x.length; i++) {
   if(x[i].checked){
     valid = true;
-    //On termine la boucle quand un element est selectionne 
+    //On termine la boucle quand un element est selectionné 
     break;
   }
 }
+//On retourne la valeur en fonction de la variable 'valide'
 if(valid){
   locationError.innerHTML = ' ';
   locationError.classList.remove('errorStyle')
@@ -217,7 +218,7 @@ if(valid){
 }
 }
 
-const checkCGV = () => {
+function checkCGV() {
   if (cgv.checked) {
     cgvError.innerHTML = ' ';
     cgvError.classList.remove('errorStyle')
