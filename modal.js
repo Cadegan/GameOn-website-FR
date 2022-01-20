@@ -154,6 +154,7 @@ function mailValidation() {
 
 //Controle age
 function birthdateValidation() {
+  var majorite = -567648000000;
   if (birthdateInput.value == ""){
     birthdateError.innerHTML = 'Vous devez entrer votre date de naissance.';
     birthdateError.classList.add('errorStyle')
@@ -162,6 +163,12 @@ function birthdateValidation() {
 
   } else if (Date.parse(birthdateInput.value) > Date.now()){
     birthdateError.innerHTML = 'Vous devez entrer une date valide.';
+    birthdateError.classList.add('errorStyle')
+    birthdate.classList.add('errorForm')
+    return false;
+
+  } else if ((Date.parse(birthdateInput.value)-Date.now()) > majorite) {
+    birthdateError.innerHTML = "Vous n'avez pas la majorité pour vous inscrire";
     birthdateError.classList.add('errorStyle')
     birthdate.classList.add('errorForm')
     return false;
@@ -183,7 +190,13 @@ function checkNb() {
     quantityError.classList.add('errorStyle')
     quantity.classList.add('errorForm');
     return false;
-  //Sinon
+  //Si rien n'est indiqué
+  } else if (nbTournois=="") {
+    quantityError.innerHTML = "Merci d'indiquer le nombre de participation";
+    quantityError.classList.add('errorStyle')
+    quantity.classList.add('errorForm');
+    return false;
+//Sinon
   } else {
     quantityError.innerHTML = "";
     quantityError.classList.remove('errorStyle')
