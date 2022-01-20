@@ -192,13 +192,13 @@ function checkNb() {
     return false;
   //Si rien n'est indiqué
   } else if (nbTournois=="") {
-    quantityError.innerHTML = "Merci d'indiquer le nombre de participation";
+    quantityError.innerHTML = "Merci d'indiquer le nombre de participations.";
     quantityError.classList.add('errorStyle')
     quantity.classList.add('errorForm');
     return false;
 //Sinon
   } else {
-    quantityError.innerHTML = "";
+    quantityError.innerHTML = '';
     quantityError.classList.remove('errorStyle')
     quantity.classList.remove('errorForm');
     return true;
@@ -253,7 +253,7 @@ emailAdress.addEventListener('input', mailValidation);
 //Age
 birthdateInput.addEventListener('input', birthdateValidation);
 //Nombre de tournois
-quantityTournois.addEventListener('keyup', checkNb);
+quantityTournois.addEventListener('input', checkNb);
 //CGV
 cgv.addEventListener('change', checkCGV)
 //Choix de la ville
