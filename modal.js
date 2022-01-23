@@ -33,8 +33,8 @@ const body = document.querySelector('body')
 
 // launch modal form
 function launchModal() {
-  modalbg.style.display = "block";
-  body.classList.add('no-scroll');
+  modalbg.style.display = "block"; //Affiche le questionnaire
+  body.classList.add('no-scroll'); //on bloque le défilement vertical de la page principale qund le auestionnaire est ouvert
 }
 
 //Fermeture du questionnaire
@@ -44,10 +44,10 @@ modalSubmitClose.addEventListener('click', close);
 
 //Appel de la fonction 'close' pour cacher le formulaire et réinitialiser les entrées
 function close() {
-  modalbg.style.display = "none"; 
+  modalbg.style.display = "none";  //Cache le questionnaire
   document.querySelector('.modal-body').style.display = 'block';
   document.querySelector('.message-validation').style.display = 'none';
-  body.classList.remove('no-scroll');
+  body.classList.remove('no-scroll'); //Réactive le défilement vertical
   clearInput();
 }
 

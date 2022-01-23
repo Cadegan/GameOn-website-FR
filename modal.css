@@ -348,6 +348,7 @@ input {
   bottom: 35px;
 }
 
+/* on bloque le défilement vertical de la page principale qund le auestionnaire est ouvert */
 .no-scroll {
   overflow: hidden;
 }
