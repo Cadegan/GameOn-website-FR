@@ -348,6 +348,10 @@ input {
   bottom: 35px;
 }
 
+.no-scroll {
+  overflow: hidden;
+}
+
 /* custom select styles */
 .custom-select {
   position: relative;

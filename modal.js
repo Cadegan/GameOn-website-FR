@@ -28,11 +28,13 @@ const emailAdress = document.getElementById("email");
 const mailError = document.getElementById("mailError");
 const mailRegex = /^[a-zA-Z][a-zA-Z0-9\-\_\.]+@[a-zA-Z0-9]{2,}\.[a-zA-Z0-9]{2,}$/;
 const cgv = document.getElementById("checkbox1");
+const body = document.querySelector('body')
 
 
 // launch modal form
 function launchModal() {
   modalbg.style.display = "block";
+  body.classList.add('no-scroll');
 }
 
 //Fermeture du questionnaire
@@ -45,6 +47,7 @@ function close() {
   modalbg.style.display = "none"; 
   document.querySelector('.modal-body').style.display = 'block';
   document.querySelector('.message-validation').style.display = 'none';
+  body.classList.remove('no-scroll');
   clearInput();
 }
 
